@@ -1,0 +1,316 @@
+/* 
+  Author: Joshua Valera
+  Date: 2024-23-24
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* General Reset and Base Styles */
+
+/* Universal Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Base Font Family */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #222222;
+    background-color: #EAEAEA;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Typography */
+  h1, h2, h3 {
+    font-family: 'Molle', serif;
+  }
+  
+  h4, p, small, nav, button, form {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Global Colors */
+  :root {
+    --primary-yellow: #F6D64A;
+    --primary-blue: #55BCD5;
+    --accent-purple: #9B26B0;
+    --accent-light-blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+  }
+  
+  /* Global Styles */
+  header {
+    background-color: var(--primary-blue);
+    padding: 20px;
+    color: var(--white);
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  /* Menu Styles */
+  nav {
+    background-color: var(--dark-gray);
+  }
+  
+  #menu-toggle label {
+    background-color: var(--primary-yellow);
+    color: var(--black);
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  ul {
+    display: none;
+  }
+  
+  input[type="checkbox"]:checked + label + ul {
+    display: block;
+  }
+  
+  ul li {
+    list-style: none;
+    padding: 10px;
+  }
+  
+  ul li a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  
+  /* Main Section */
+  main {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  #intro p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  /* Grid Layout */
+  #img-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* This ensures a single column */
+    gap: 10px;  /* Add some space between the images */
+    margin-top: 20px;
+    
+  }
+
+  /* Small Screen Styles (Mobile First) */
+@media (max-width: 480px) {
+  
+  /* Image Grid (Stack vertically) */
+  #img-grid {
+    grid-template-columns: 1fr;  /* Single column */
+    gap: 10px;  /* Space between images */
+  }
+
+}
+  
+  #img-grid img {
+    width: 100%;
+    height: auto; /* Win */
+  }
+  
+  /* Plan Section */
+  #plan section {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center the image and text vertically */
+    margin-bottom: 20px;
+  }
+  
+  #plan section img {
+    width: 50px; /* Adjust the size of the SVG or image */
+    height: auto;
+    margin-right: 10px; /* Add space between the image and the text */
+  }
+  
+  #plan section h4 {
+    font-size: 1.3em;
+    color: var(--primary-yellow);
+  }
+  
+  /* Testimonials */
+  #testimonials {
+    background-color: var(--light-gray);
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  #testimonials section {
+    margin-bottom: 50px;
+  }
+  
+  #testimonials img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  /* Contact Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"], input[type="email"], input[type="tel"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: var(--primary-yellow);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--black);
+    font-size: 1.1em;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  /* Media Queries for Larger Screens */
+  
+  /* Medium Screens (Tablets) */
+  @media (min-width: 768px) {
+    #img-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    header h1 {
+      font-size: 3em;
+    }
+  
+    #intro p {
+      font-size: 1.2em;
+    }
+  
+    #plan {
+      display: flex;
+      gap: 20px;
+    }
+  
+    #plan section {
+      flex: 1;
+    }
+  
+    #testimonials section {
+      display: flex;
+      align-items: center;
+    }
+  
+    #testimonials img {
+      width: 80px;
+    }
+  
+    form {
+      flex-direction: row;
+      gap: 30px;
+    }
+  
+    input[type="text"], input[type="email"], input[type="tel"], select {
+      flex: 1;
+    }
+  }
+  
+  /* Large Screens (Desktops) */
+  @media (min-width: 1024px) {
+    #img-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+    header h1 {
+      font-size: 3.5em;
+    }
+  
+    #plan {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    #plan section {
+      width: 23%;
+    }
+  
+    form {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
